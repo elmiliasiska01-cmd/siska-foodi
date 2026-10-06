@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Siska Foodie 💜</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    color:white;
+    background:
+    radial-gradient(circle at 20% 20%,#9b4dff55,transparent 30%),
+    radial-gradient(circle at 80% 70%,#d946ef44,transparent 30%),
+    linear-gradient(135deg,#130020,#300052,#170025);
+    overflow-x:hidden;
+}
+
+/* ================= BUBBLE ================= */
+
+.bubble{
+    position:fixed;
+    border-radius:50%;
+    background:#ffffff15;
+    box-shadow:0 0 25px #d77aff;
+    animation:naik 10s infinite ease-in-out;
+    z-index:-1;
+}
+
+.b1{
+    width:18px;
+    height:18px;
+    left:8%;
+    top:75%;
+}
+
+.b2{
+    width:30px;
+    height:30px;
+    left:85%;
+    top:25%;
+    animation-delay:2s;
+}
+
+.b3{
+    width:14px;
+    height:14px;
+    left:45%;
+    top:80%;
+    animation-delay:4s;
+}
+
+.b4{
+    width:24px;
+    height:24px;
+    left:70%;
+    top:65%;
+    animation-delay:1s;
+}
+
+@keyframes naik{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-100px);
+    }
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:17px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#130020dd;
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #ffffff20;
+    z-index:999;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#e9b5ff;
+    text-shadow:0 0 15px #b54dff;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#df9cff;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px 50px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:clamp(45px,9vw,90px);
+    color:#efc7ff;
+    text-shadow:
+    0 0 10px #c14dff,
+    0 0 35px #9d35ff;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.8;
+    color:#ead9f5;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 32px;
+    border-radius:40px;
+    background:linear-gradient(90deg,#8e2de2,#c471ed);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 0 25px #a855f7;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:90px 7%;
+}
+
+.title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:45px;
+    color:#edc9ff;
+    text-shadow:0 0 18px #a855f7;
+}
+
+/* ================= MENU ================= */
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+    gap:28px;
+}
+
+.card{
+    overflow:hidden;
+    border-radius:24px;
+    background:#ffffff0d;
+    border:1px solid #ffffff20;
+    backdrop-filter:blur(12px);
+    box-shadow:0 15px 35px #00000050;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 0 35px #a855f766;
+}
+
+.card-img{
+    width:100%;
+    height:230px;
+    overflow:hidden;
+}
+
+.card-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#d9c8e5;
+    margin-bottom:12px;
+}
+
+.price{
+    color:#e6a6ff !important;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.about p{
+    font-size:18px;
+    line-height:1.9;
+    color:#e6d6ed;
+}
+
+/* ================= INFO ================= */
+
+.info{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.info-box{
+    text-align:center;
+    padding:30px 20px;
+    border-radius:22px;
+    background:#ffffff0d;
+    border:1px solid #ffffff20;
+    box-shadow:0 10px 25px #00000030;
+}
+
+.info-box h3{
+    color:#dfa0ff;
+    margin-bottom:12px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    color:#e4d4eb;
+    font-size:18px;
+}
+
+.wa{
+    display:inline-block;
+    margin-top:25px;
+    padding:16px 32px;
+    border-radius:40px;
+    background:linear-gradient(90deg,#8e2de2,#c471ed);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 0 25px #a855f7;
+    transition:.3s;
+}
+
+.wa:hover{
+    transform:scale(1.08);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#0c0015;
+    color:#cdb7d8;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    nav{
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    nav ul{
+        gap:10px;
+        font-size:12px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+
+    .title{
+        font-size:32px;
+    }
+
+    .card-img{
+        height:220px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- BUBBLE -->
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+<div class="bubble b4"></div>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        💜 Siska Foodie
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#contact">Kontak</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Siska Foodie 💜</h1>
+
+        <p>
+            Nikmati makanan lezat, minuman segar,
+            dan suasana yang nyaman dalam satu tempat.
+            Dibuat dengan rasa dan cinta. 🍽️✨
+        </p>
+
+        <a href="#menu" class="btn">
+            Lihat Menu 🍴
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section id="menu">
+
+<h2 class="title">
+    Menu Favorit 🍽️
+</h2>
+
+<div class="menu-grid">
+
+
+<!-- AYAM GEPREK -->
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/dbf2dd4c-b7af-45ac-a58a-d69421fd5e74_master-menu-item-image_1613562511614.jpg"
+alt="Ayam Geprek Sambal Matah">
+
+</div>
+
+<div class="card-content">
+
+<h3>🍗 Ayam Geprek Sambal Matah</h3>
+
+<p>
+Ayam crispy dengan sambal matah
+yang pedas dan segar.
+</p>
+
+<div class="price">
+Rp18.000
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MIE AYAM -->
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="https://images.pexels.com/photos/37104346/pexels-photo-37104346.jpeg"
+alt="Mie Ayam Pedas">
+
+</div>
+
+<div class="card-content">
+
+<h3>🍜 Mie Ayam Pedas</h3>
+
+<p>
+Mie kenyal dengan ayam berbumbu
+dan rasa pedas yang menggugah selera.
+</p>
+
+<div class="price">
+Rp15.000
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BURGER -->
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="https://images.pexels.com/photos/7479006/pexels-photo-7479006.jpeg"
+alt="Beef Burger">
+
+</div>
+
+<div class="card-content">
+
+<h3>🍔 Beef Burger</h3>
+
+<p>
+Burger beef juicy dengan sayuran
+segar dan saus spesial.
+</p>
+
+<div class="price">
+Rp22.000
+</div>
+
+</div>
+
+</div>
+
+
+<!-- KENTANG -->
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="https://images.pexels.com/photos/8880739/pexels-photo-8880739.jpeg"
+alt="Kentang Crispy">
+
+</div>
+
+<div class="card-content">
+
+<h3>🍟 Kentang Crispy</h3>
+
+<p>
+Kentang goreng renyah dengan
+rasa gurih yang bikin nagih.
+</p>
+
+<div class="price">
+Rp12.000
+</div>
+
+</div>
+
+</div>
+
+
+<!-- NASI GORENG -->
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="https://images.pexels.com/photos/37073151/pexels-photo-37073151.jpeg"
+alt="Nasi Goreng Spesial">
+
+</div>
+
+<div class="card-content">
+
+<h3>🍳 Nasi Goreng Spesial</h3>
+
+<p>
+Nasi goreng berbumbu dengan
+telur dan pelengkap spesial.
+</p>
+
+<div class="price">
+Rp17.000
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ES TEH -->
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="https://images.pexels.com/photos/37079584/pexels-photo-37079584.jpeg"
+alt="Es Teh Manis">
+
+</div>
+
+<div class="card-content">
+
+<h3>🥤 Es Teh Manis</h3>
+
+<p>
+Teh manis dingin dengan es
+yang menyegarkan.
+</p>
+
+<div class="price">
+Rp5.000
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ES COKLAT -->
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="https://images.pexels.com/photos/11277040/pexels-photo-11277040.jpeg"
+alt="Es Coklat">
+
+</div>
+
+<div class="card-content">
+
+<h3>🍫 Es Coklat</h3>
+
+<p>
+Minuman coklat dingin yang
+creamy dan manis.
+</p>
+
+<div class="price">
+Rp10.000
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ROTI BAKAR -->
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/089e806c-83a9-49b2-84e6-9dd8d7f6ff30_Go-Biz_20250922_170059.jpeg"
+alt="Roti Bakar Keju Coklat">
+
+</div>
+
+<div class="card-content">
+
+<h3>🍞 Roti Bakar Keju Coklat</h3>
+
+<p>
+Roti panggang renyah dengan
+coklat dan keju yang lumer.
+</p>
+
+<div class="price">
+Rp13.000
+</div>
+
+</div>
+
+</div>
+
+
+<!-- UDANG -->
+
+<div class="card">
+
+<div class="card-img">
+
+<img
+src="https://images.pexels.com/photos/36657668/pexels-photo-36657668.jpeg"
+alt="Udang Crispy">
+
+</div>
+
+<div class="card-content">
+
+<h3>🍤 Udang Crispy</h3>
+
+<p>
+Udang goreng crispy dengan
+tekstur renyah dan gurih.
+</p>
+
+<div class="price">
+Rp20.000
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STRAWBERRY MILK -->
+
+<div class="card">
+
+<div class="card-img">
+
+<img src="https://images.pexels.com/photos/8284685/pexels-photo-8284685.jpeg" alt="Strawberry Milk">
+
+</div>
+
+<div class="card-content">
+
+<h3>🍓 Strawberry Milk</h3>
+
+<p>
+Susu creamy dengan rasa
+strawberry yang segar.
+</p>
+
+<div class="price">
+Rp12.000
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="title">
+    Tentang Siska Foodie 💜
+</h2>
+
+<div class="about">
+
+<p>
+Siska Foodie adalah tempat untuk menikmati
+berbagai makanan dan minuman favorit dengan
+rasa yang lezat dan harga yang bersahabat.
+
+Kami ingin setiap pelanggan pulang dengan
+perasaan puas dan tentunya ingin kembali lagi. 💜
+</p>
+
+</div>
+
+</section>
+
+
+<!-- INFO TOKO -->
+
+<section>
+
+<h2 class="title">
+    Info Toko 📍
+</h2>
+
+<div class="info">
+
+
+<div class="info-box">
+
+<h3>📍 Alamat</h3>
+
+<p>
+Jl. Bandung No.02/01
+</p>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>🕐 Jam Buka</h3>
+
+<p>
+10.00 - 22.00 WIB
+</p>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>📞 WhatsApp</h3>
+
+<p>
+0821-7160-4758
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="title">
+    Pesan Sekarang 💜
+</h2>
+
+<div class="contact">
+
+<p>
+Mau pesan makanan atau ingin bertanya?
+Hubungi Siska Foodie melalui WhatsApp.
+</p>
+
+<a
+class="wa"
+href="https://wa.me/6281234567890"
+target="_blank">
+
+💬 Chat WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Siska Foodie 💜
+<br>
+Dibuat dengan ❤️ untuk pecinta makanan.
+
+</footer>
+
+
+</body>
+</html>o
